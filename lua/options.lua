@@ -32,7 +32,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -54,8 +54,6 @@ vim.opt.inccommand = 'split'
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
--- Make cursor line blink
--- vim.opt.cursorline =
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
