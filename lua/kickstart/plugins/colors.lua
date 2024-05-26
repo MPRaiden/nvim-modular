@@ -1,20 +1,22 @@
--- Return block containing plugin specifications and configurations
 return {
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
-      require('rose-pine').setup {
-        variant = 'main', -- Variant options are main, moon, dawn
-        styles = {
-          italic = false,
-        },
-      }
+  'folke/tokyonight.nvim',
+  --[[ 'rose-pine/neovim', ]]
+  priority = 1000,
+  config = function()
+    local transparent = true -- set to true if you would like to enable transparency
 
-      -- Apply the rose-pine theme
-      vim.cmd 'colorscheme rose-pine'
-    end,
-  },
+    --require('rose-pine').setup {
+    require('tokyonight').setup {
+      --variant = 'moon', -- Variant options are main, moon, dawn
+      style = 'night', -- the theme comes in three styles: `storm`, `moon`, a darker variant `night`, and `day`
+      transparent = transparent,
+      styles = {
+        sidebars = transparent and 'transparent' or 'dark',
+        floats = transparent and 'transparent' or 'dark',
+      },
+    }
+
+    vim.cmd 'colorscheme tokyonight'
+    --vim.cmd 'colorscheme rose-pine'
+  end,
 }
-
--- vim: ts=2 sts=2 sw=2 et
